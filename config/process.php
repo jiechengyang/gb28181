@@ -44,6 +44,25 @@ return [
             'consumer_dir' => biz_path() . '/Queue/Job'// 消费者类目录
         ]
     ],
+    'sip_server' => [
+        'handler' => process\SipServer::class,
+        'count' => cpu_count(),
+        'listen' =>  sprintf('%s://%s:%s', envHelper('SIP_SERVER_PROTOCOL', 'tcp'), envHelper('SIP_SERVER_HOST', '0.0.0.0'), envHelper('SIP_SERVER_PORT', 15060)),
+        'constructor' => [
+            'config' => [
+                'realm' => envHelper('SIP_SERVER_REALM', '3402000000'),
+                'serverSipDeviceId' => envHelper('SIP_SERVER_SERVER_SIP_DEVICE_ID', '34020000002000000001'),
+                'gbVersion' =>envHelper('SIP_SERVER_GB_VERSION', 'GB-2016'),
+                'authentication' => boolval(intval(envHelper('SIP_SERVER_AUTHENTICATION', 0))),
+                'sipUsername' =>envHelper('SIP_SERVER_SIP_USERNAME', 'admin'),
+                'sipPassword' => envHelper('SIP_SERVER_SIP_PASSWORD', 'admin123!'),
+                'keepAliveInterval' => envHelper('SIP_SERVER_KEEP_ALIVE_INTERVAL', 30),
+                'keepAliveLostNumber' => envHelper('SIP_SERVER_KEEP_ALIVE_LOST_NUMBER', 3),
+                'encodingType' => envHelper('SIP_SERVER_ENCODING_TYPE', 'UTF-8'), // GBK 或 UTF-8
+                'noAuthenticationRequiredClients' => []
+            ]
+        ]
+    ],
 //    'websocket_live'  => [
 //        'handler'  => process\Websocket::class,
 //        'listen' => 'websocket://0.0.0.0:8888',
@@ -53,12 +72,12 @@ return [
         'handler' => \GlobalData\Server::class,
         'listen' => 'frame://127.0.0.1:2207'
     ],
-    'task_record' => [
-        'handler' => \process\TaskRecord::class,
-        'count' => \envHelper('TASK_RECORD_PROCESS_NUM', 3),
-    ],
-    'task_device_status' => [
-        'handler' => \process\TaskDeviceStatus::class,
-        'count' => 1
-    ]
+    // 'task_record' => [
+    //     'handler' => \process\TaskRecord::class,
+    //     'count' => \envHelper('TASK_RECORD_PROCESS_NUM', 3),
+    // ],
+    // 'task_device_status' => [
+    //     'handler' => \process\TaskDeviceStatus::class,
+    //     'count' => 1
+    // ]
 ];

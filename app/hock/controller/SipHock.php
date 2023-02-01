@@ -23,7 +23,7 @@ use Webman\Config;
  * Class AkStream
  * @package app\api\controller
  */
-class AkStream extends \app\AbstractController
+class SipHock extends \app\AbstractController
 {
     public function beforeAction(Request $request)
     {

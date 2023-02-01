@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#git show --stat
+#git log --pretty=format:"%s" | head -1  | awk '{print $1}'
+#git log --pretty=format:"%s" | head -1 | egrep '(feature|bugfix|hot|fix|hotfix)\/([0-9]+)' | awk '{print $3}'
+#git log --pretty=format:"%s" | head -1 | awk '{print $3}' | egrep '(feature|bugfix|hot|fix|hotfix)\/([0-9]+)'
+log=`git log --pretty=format:"%s" | head -1`
+#echo ${testStr}|awk '{match($0,/(feature|bugfix|hot|fix|hotfix)\/([0-9]+)/,a)} {print a[0]}'
+# git log --pretty=format:"%s" | head -1 | awk '{print $3}' |awk '/(feature|bugfix|hot|fix|hotfix)\/([0-9]+)/ {print a[0]}'
+#awk 'BEGIN {
+#    str = "${testStr}"
+#    subs = "/(feature|bugfix|hot|fix|hotfix)\/([0-9]+)/"
+#
+#    ret = match(str, subs)
+#
+#    printf "Substring \"%s\" found at %d location.\n", subs, ret
+#}'
+message="${log} @18875099454"
+echo ${message}
+curl -H "Content-Type: application/x-www-form-urlencode" -X POST -d "robot_token=3dee59818e1d358fec49192cd375bb6d336f80c056e657387cb5fc7b8ee44dc9&robot_secret=SECfb6a641154fb6424a808c08735c95edfb60f87517bd5692940a26ce9ca081669&at_all=0&project_name=edusoho&mobiles=18875099454&message=${message}" "http://106.12.14.105:8787/talk/push-message/wQvY7TBUtLl1ICi1mK33Cgo6O4eHmxJR"
+# curl -H "Content-Type: application/x-www-form-urlencode" -X POST -d "robot_token=dc4d2d29aabce4c006eb8e163e537df6564fddbf80af0a7993b2a2f8c392b3ef&robot_secret=SEC6d1dca0f5d992f584d531e98ad8857204e516ea598bfa54492b908fdeb7f0400&at_all=0&project_name=edusoho_ci_push&mobiles=18483699374&message=${message}" "http://192.168.10.107:8787/talk/push-message/wQvY7TBUtLl1ICi1mK33Cgo6O4eHmxJR"

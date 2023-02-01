@@ -1,0 +1,65 @@
+{
+  "name": "sip-media-manage/webman",
+  "type": "library",
+  "keywords": [
+    "high performance",
+    "http service"
+  ],
+  "homepage": "http://www.workerman.net",
+  "license": "MIT",
+  "description": "基于webman实现国标平台",
+  "authors": [
+    {
+      "name": "yangjiecheng",
+      "email": "yangjiecheng1995@163.com",
+      "homepage": "http://www.workerman.net",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "walkor@workerman.net",
+    "issues": "https://github.com/walkor/webman/issues",
+    "forum": "http://wenda.workerman.net/",
+    "wiki": "http://workerman.net/doc/webman",
+    "source": "https://github.com/walkor/webman"
+  },
+  "require": {
+    "php": ">=7.2",
+    "workerman/webman-framework": "^1.0",
+    "vlucas/phpdotenv": ">=4.1,<6.0",
+    "guzzlehttp/guzzle": "^7.2",
+    "workerman/crontab": "^1.0",
+    "php-di/php-di": "^6.3",
+    "doctrine/annotations": "^1.12",
+    "davedevelopment/phpmig": "^1.7",
+    "codeages/biz-framework": "^0.10.6",
+    "symfony/debug": "^4.4",
+    "webman/redis-queue": "^1.0",
+    "illuminate/redis": "^7.0",
+    "workerman/globaldata": "^1.0",
+    "ramsey/uuid": "^4.2",
+    "imagine/imagine": "^1.2",
+    "symfony/security-acl": "^3.3",
+    "millionmile/get_env": "^1.0",
+    "gregwar/captcha": "1.*",
+    "symfony/stopwatch": "^5.4"
+  },
+  "suggest": {
+    "ext-event": "For better performance. "
+  },
+  "autoload": {
+    "files": [
+      "./support/helpers.php"
+    ],
+    "psr-4": {
+      "commands\\": "./commands",
+      "Biz\\": "./Biz",
+      "gii\\": "./gii"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  }
+}

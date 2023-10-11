@@ -8,6 +8,7 @@
 - 数据统计分析
 
 # 截图
+![screenshot](https://github.com/jiechengyang/php-gb28181/assets/33148475/46d56902-2477-45b5-8803-84af7a18ebff)
 ![企业微信20231011-151926](https://github.com/jiechengyang/php-gb28181/assets/33148475/abf288e3-0925-4228-b8d3-0fefc89cc165)
 ![企业微信20231011-152007](https://github.com/jiechengyang/php-gb28181/assets/33148475/2d1db133-a298-41d0-9d19-af3e58551b2f)
 ![企业微信20231011-151945](https://github.com/jiechengyang/php-gb28181/assets/33148475/d29dc981-35de-4060-92b3-f645530f50bb)

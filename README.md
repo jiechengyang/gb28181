@@ -16,8 +16,7 @@
 ![企业微信20231007-124949](https://github.com/jiechengyang/php-gb28181/assets/33148475/823a0e1e-3ad8-489e-b233-8ed5f50643bf)
 ![企业微信20231011-151834](https://github.com/jiechengyang/php-gb28181/assets/33148475/8a626932-6a26-4c8c-89b2-cc71bee84382)
 
-# 如需要生产版本，请![企业微信20231011-151926](https://github.com/jiechengyang/php-gb28181/assets/33148475/0c851c60-dd69-457b-b664-54b50e9f1529)
-联系
+# 如需要生产版本，请联系
 - wanzij177@163.com
  
  
